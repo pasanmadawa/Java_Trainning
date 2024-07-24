@@ -53,11 +53,15 @@ public class Triangle implements Shape {
 
     @Override
     public int area() {
-        return (getBase() * getHeight());
+        return (getBase() * getHeight()) / 2;
     }
 
     @Override
     public int perimeter() {
-        return 0;
+        return getBase() + getLength1() + getLength2();
+    }
+
+    public String toString(){
+        return getClass().getSimpleName();
     }
 }
