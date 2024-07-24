@@ -2,7 +2,8 @@ package org.example;
 
 public interface Shape {
 
-    public  int area();
+    public  double area();
 
-    public  int perimeter();
+    public  double perimeter();
+    public String toString();
 }

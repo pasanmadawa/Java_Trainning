@@ -2,65 +2,66 @@ package org.example;
 
 public class Triangle implements Shape {
 
-    private int base;
-    private int height;
+    private double base;
+    private double height;
 
-    private int length1;
-    private int length2;
+    private double length1;
+    private double length2;
 
-    public Triangle(int base, int height) {
+    public Triangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
 
-    public Triangle(int base, int length1, int length2){
+    public Triangle(double base, double length1, double length2){
         this.base = base;
         this.length1 = length1;
         this.length2 = length2;
     }
 
-    public int getBase() {
+    public double getBase() {
         return base;
     }
 
-    public void setBase(int base) {
+    public void setBase(double base) {
         this.base = base;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public int getLength1() {
+    public double getLength1() {
         return length1;
     }
 
-    public void setLength1(int length1) {
+    public void setLength1(double length1) {
         this.length1 = length1;
     }
 
-    public int getLength2() {
+    public double getLength2() {
         return length2;
     }
 
-    public void setLength2(int length2) {
+    public void setLength2(double length2) {
         this.length2 = length2;
     }
 
     @Override
-    public int area() {
+    public double area() {
         return (getBase() * getHeight()) / 2;
     }
 
     @Override
-    public int perimeter() {
+    public double perimeter() {
         return getBase() + getLength1() + getLength2();
     }
 
+    @Override
     public String toString(){
         return getClass().getSimpleName();
     }

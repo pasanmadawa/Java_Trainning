@@ -43,18 +43,18 @@ public class Main {
                     case 1:
                         while (true){
                             System.out.print("Enter the height1: ");
-                            int squareHeight;
+                            double squareHeight;
                             try{
-                                squareHeight = scanner.nextInt();
+                                squareHeight = scanner.nextDouble();
 
                                 if( 0 < squareHeight){
                                     Quadrilateral square = new Quadrilateral(squareHeight, squareHeight);
 
-                                    int area1 = square.area();
-                                    int perimeter1 = square.perimeter();
+                                    double areaOfSquare = square.area();
+                                    double perimeterOfSquare = square.perimeter();
 
-                                    System.out.println("Perimeter of Square" + " is " + perimeter1);
-                                    System.out.println("Area of Square" + " is " + area1 + "\n");
+                                    System.out.println("Perimeter of Square" + " is " + perimeterOfSquare);
+                                    System.out.println("Area of Square" + " is " + areaOfSquare + "\n");
                                     break;
                                 }
                                 else
@@ -69,24 +69,24 @@ public class Main {
                         break;
                     case 2:
                         while (true){
-                            System.out.print("Enter the height2: ");
-                            int squareHeight;
+                            System.out.print("Enter the height: ");
+                            double squareHeight;
                             try{
-                                squareHeight = scanner.nextInt();
+                                squareHeight = scanner.nextDouble();
 
                                 if( 0 < squareHeight){
                                     while (true){
                                         System.out.print("Enter the width: ");
                                        try {
-                                           int squareWidth = scanner.nextInt();
+                                           double squareWidth = scanner.nextDouble();
                                            if( 0 < squareWidth){
                                                Quadrilateral rectangle = new Quadrilateral(squareHeight, squareWidth);
 
-                                               int area1 = rectangle.area();
-                                               int perimeter1 = rectangle.perimeter();
+                                               double areaOfRectangle = rectangle.area();
+                                               double perimeterOfRectangle = rectangle.perimeter();
 
-                                               System.out.println("Perimeter of Square" + " is " + perimeter1);
-                                               System.out.println("Area of Square" + " is " + area1 + "\n");
+                                               System.out.println("Perimeter of Square" + " is " + perimeterOfRectangle);
+                                               System.out.println("Area of Square" + " is " + areaOfRectangle + "\n");
                                                break;
                                            }
                                            else
@@ -128,20 +128,20 @@ public class Main {
                                         while (true){
                                             System.out.print("Enter the value of base_1: ");
                                             try {
-                                                int base_1 = scanner.nextInt();
+                                                double base_1 = scanner.nextDouble();
                                                 if( 0 < base_1){
                                                     while (true){
                                                         System.out.print("Enter the value of base_2: ");
                                                         try {
-                                                            int base_2 = scanner.nextInt();
+                                                            double base_2 = scanner.nextDouble();
                                                             if( 0 < base_2){
                                                                 while (true){
                                                                     System.out.print("Enter the value of base_3: ");
                                                                     try {
-                                                                        int base_3 = scanner.nextInt();
+                                                                        double base_3 = scanner.nextDouble();
                                                                         if( 0 < base_3){
                                                                             Triangle triangle_1 = new Triangle(base_1,base_2,base_3);
-                                                                            int perimeterOfTriangle = triangle_1.perimeter();
+                                                                            double perimeterOfTriangle = triangle_1.perimeter();
                                                                             String nameTriangle = triangle_1.toString();
                                                                             System.out.println("\nPerimeter of "+nameTriangle +" is "+ perimeterOfTriangle);
                                                                             break;
@@ -184,19 +184,19 @@ public class Main {
                                         //-----------------------------------
                                         while (true){
                                             System.out.print("Enter the base: ");
-                                            int baseOfTriangle;
+                                            double baseOfTriangle;
                                             try{
-                                                baseOfTriangle = scanner.nextInt();
+                                                baseOfTriangle = scanner.nextDouble();
 
                                                 if( 0 < baseOfTriangle){
                                                     while (true){
                                                         System.out.print("Enter the height: ");
                                                         try {
-                                                            int heightOfTriangle = scanner.nextInt();
+                                                            double heightOfTriangle = scanner.nextDouble();
                                                             if( 0 < heightOfTriangle){
                                                                 Triangle triangle_2 = new Triangle(baseOfTriangle,heightOfTriangle);
 
-                                                                int area =triangle_2.area();
+                                                                double area =triangle_2.area();
                                                                 String name = triangle_2.toString();
                                                                 System.out.println("Area of "+name + " is " + area +"\n" );
                                                                 break;
@@ -240,7 +240,106 @@ public class Main {
                                 scanner.nextLine();
                             }
                         }
-                    case 4:
+                    case 5:
+                        //-------------------------------
+
+                        while (true){
+                            System.out.println("Enter no 1 for Perimeter");
+                            System.out.println("Enter no 2 for Area");
+                            System.out.println("Enter no 0 for Back to Main Menu\n");
+
+                            System.out.print("Enter the number: ");
+
+                            try{
+                                int numberInTriangle = scanner.nextInt();
+                                if(0 <= numberInTriangle && numberInTriangle < 3){
+
+                                    if(numberInTriangle == 1){
+                                        //----------
+                                        while (true){
+                                            System.out.print("Enter the value of side: ");
+                                            try {
+                                                double side = scanner.nextDouble();
+                                                if(0 < side){
+                                                    Rhombus rhombus = new Rhombus(side);
+                                                    double areaOfRhombus = rhombus.area();
+                                                    String name = rhombus.toString();
+
+                                                    System.out.println("Area of "+ name + " is "+ areaOfRhombus);
+                                                    break;
+                                                }
+                                                else
+                                                    System.out.println("Enter Correct Input");
+                                            }
+                                            catch (InputMismatchException e){
+                                                System.out.println("Enter Correct Input");
+                                                scanner.nextLine();
+                                            }
+
+                                        }
+                                    } else if (numberInTriangle == 2) {
+
+                                        //-----------------------------------
+                                        while (true){
+                                            System.out.print("Enter the side_1: ");
+                                            double side_1;
+                                            try{
+                                                side_1 = scanner.nextDouble();
+
+                                                if( 0 < side_1){
+                                                    while (true){
+                                                        System.out.print("Enter the side_2: ");
+                                                        try {
+                                                            double side_2 = scanner.nextDouble();
+                                                            if( 0 < side_2){
+                                                                Triangle triangle_2 = new Triangle(side_1,side_2);
+
+                                                                double area =triangle_2.area();
+                                                                String name = triangle_2.toString();
+                                                                System.out.println("Area of "+name + " is " + area +"\n" );
+                                                                break;
+                                                            }
+                                                            else
+                                                                System.out.println("Enter Correct Input");
+
+                                                        }
+                                                        catch (InputMismatchException e){
+                                                            System.out.println("Enter Correct Input");
+                                                            scanner.nextLine();
+                                                        }
+                                                    }
+                                                    break;
+                                                }
+                                                else
+                                                    System.out.println("Enter Correct Input");
+
+                                            }
+                                            catch (InputMismatchException e){
+                                                System.out.println("Enter Correct Input ");
+                                                scanner.nextLine();
+                                            }
+
+                                        }
+
+
+                                        //-------------------------------------
+                                    } else
+                                        break;
+
+                                    //----------
+                                }
+                                else{
+                                    System.out.println("Enter Correct Number");
+
+                                }
+                            }
+                            catch (InputMismatchException e){
+                                System.out.println("Enter Correct Input");
+                                scanner.nextLine();
+                            }
+                        }
+
+                        //--------------------------------
                 }
             }
 

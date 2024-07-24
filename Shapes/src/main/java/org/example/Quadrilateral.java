@@ -2,37 +2,37 @@ package org.example;
 
 public class Quadrilateral implements Shape{
 
-    private int height;
-    private int width;
+    private double height;
+    private double width;
 
-    public Quadrilateral(int height, int width){
+    public Quadrilateral(double height, double width){
         this.height = height;
         this.width = width;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 
     @Override
-    public int perimeter(){
+    public double perimeter(){
         return (getHeight()  + getWidth()) * 2;
     }
 
     @Override
-    public int area(){
+    public double area(){
         return getHeight() * getWidth();
     }
 
