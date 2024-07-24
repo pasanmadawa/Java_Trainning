@@ -115,13 +115,13 @@ public class Main {
                         while (true){
                             System.out.println("Enter no 1 for Perimeter");
                             System.out.println("Enter no 2 for Area");
-                            System.out.println("Enter no 0 for Back to Main Menu\n");
+                            System.out.println("Enter no 3 for Back to Main Menu\n");
 
                             System.out.print("Enter the number: ");
 
                             try{
                                 int numberInTriangle = scanner.nextInt();
-                                if(0 <= numberInTriangle && numberInTriangle < 3){
+                                if(0 <= numberInTriangle && numberInTriangle < 4){
 
                                     if(numberInTriangle == 1){
                                         //----------
@@ -240,21 +240,51 @@ public class Main {
                                 scanner.nextLine();
                             }
                         }
+                        break;
+                    case 4:
+
+                        while (true){
+                            System.out.print("Enter the radius: ");
+                            double radius;
+                            try{
+                                radius = scanner.nextDouble();
+
+                                if( 0 < radius){
+                                    Circle circle = new Circle(radius);
+                                    double area = circle.area();
+                                    double perimeter = circle.perimeter();
+                                    String name = circle.toString();
+
+                                    System.out.println("Area of "+ name + " is " + area);
+                                    System.out.println("Perimeter of "+ name + " is " + perimeter);
+                                    break;
+                                }
+                                else
+                                    System.out.println("Enter Correct Input");
+
+                            }
+                            catch (InputMismatchException e){
+                                System.out.println("Enter Correct Input");
+                                scanner.nextLine();
+                            }
+                        }
+                        break;
+
                     case 5:
                         //-------------------------------
 
                         while (true){
                             System.out.println("Enter no 1 for Perimeter");
                             System.out.println("Enter no 2 for Area");
-                            System.out.println("Enter no 0 for Back to Main Menu\n");
+                            System.out.println("Enter no 3 for Back to Main Menu\n");
 
                             System.out.print("Enter the number: ");
 
                             try{
-                                int numberInTriangle = scanner.nextInt();
-                                if(0 <= numberInTriangle && numberInTriangle < 3){
+                                int numberInRhombus = scanner.nextInt();
+                                if(0 <= numberInRhombus && numberInRhombus < 4){
 
-                                    if(numberInTriangle == 1){
+                                    if(numberInRhombus == 1){
                                         //----------
                                         while (true){
                                             System.out.print("Enter the value of side: ");
@@ -262,10 +292,10 @@ public class Main {
                                                 double side = scanner.nextDouble();
                                                 if(0 < side){
                                                     Rhombus rhombus = new Rhombus(side);
-                                                    double areaOfRhombus = rhombus.area();
+                                                    double areaOfRhombus = rhombus.perimeter();
                                                     String name = rhombus.toString();
 
-                                                    System.out.println("Area of "+ name + " is "+ areaOfRhombus);
+                                                    System.out.println("Perimeter of "+ name + " is "+ areaOfRhombus+"\n");
                                                     break;
                                                 }
                                                 else
@@ -277,7 +307,7 @@ public class Main {
                                             }
 
                                         }
-                                    } else if (numberInTriangle == 2) {
+                                    } else if (numberInRhombus == 2) {
 
                                         //-----------------------------------
                                         while (true){
@@ -338,8 +368,190 @@ public class Main {
                                 scanner.nextLine();
                             }
                         }
+                        break;
 
                         //--------------------------------
+
+                    case 6:
+                        //------------
+
+                        while (true){
+                            System.out.println("Enter no 1 for Area");
+                            System.out.println("Enter no 2 for Perimeter");
+                            System.out.println("Enter no 3 for Back to Main Menu\n");
+
+                            System.out.print("Enter the number: ");
+
+                            try{
+                                int numberInTrapezoid = scanner.nextInt();
+                                if(0 <= numberInTrapezoid && numberInTrapezoid < 4){
+
+                                    if(numberInTrapezoid == 1){
+                                        //----------
+                                        while (true){
+                                            System.out.print("Enter the parallelSide_1: ");
+                                            double parallelSide_1;
+                                            try{
+                                                parallelSide_1 = scanner.nextDouble();
+
+                                                if( 0 < parallelSide_1){
+                                                    while (true){
+                                                        System.out.print("Enter the parallelSide_2: ");
+                                                        try {
+                                                            double parallelSide_2 = scanner.nextDouble();
+                                                            if( 0 < parallelSide_2){
+                                                                while (true){
+                                                                    System.out.print("Enter the height: ");
+                                                                    try {
+                                                                        double height = scanner.nextDouble();
+                                                                        if(0 < height){
+
+                                                                            Trapezoid trapezoid = new Trapezoid(parallelSide_1,parallelSide_2,height);
+                                                                            double areaOfTrapezoid = trapezoid.area();
+                                                                            String name = trapezoid.toString();
+
+                                                                            System.out.println("Area of "+ name + " is "+ areaOfTrapezoid +"\n");
+                                                                            break;
+                                                                        }
+                                                                        else
+                                                                            System.out.println("Enter Correct Number");
+                                                                    }
+                                                                    catch (InputMismatchException e){
+                                                                        System.out.println("Enter Correct Input");
+                                                                        scanner.nextLine();
+                                                                    }
+
+                                                                }
+                                                                break;
+
+                                                            }
+                                                            else
+                                                                System.out.println("Enter Correct Input");
+
+                                                        }
+                                                        catch (InputMismatchException e){
+                                                            System.out.println("Enter Correct Input");
+                                                            scanner.nextLine();
+                                                        }
+                                                    }
+                                                    break;
+
+                                                }
+                                                else
+                                                    System.out.println("Enter Correct Input");
+
+                                            }
+                                            catch (InputMismatchException e){
+                                                System.out.println("Enter Correct Input ");
+                                                scanner.nextLine();
+                                            }
+
+                                        }
+                                    } else if (numberInTrapezoid == 2) {
+
+                                        //-----------------------------------
+                                        while (true){
+                                            System.out.print("Enter the value of parallelSide_1: ");
+                                            try {
+                                                double parallelSide_1 = scanner.nextDouble();
+                                                if( 0 < parallelSide_1){
+                                                    while (true){
+                                                        System.out.print("Enter the value of parallelSide_2: ");
+                                                        try {
+                                                            double parallelSide_2 = scanner.nextDouble();
+                                                            if( 0 < parallelSide_2){
+                                                                while (true){
+                                                                    System.out.print("Enter the value of side_3: ");
+                                                                    try {
+                                                                        double side_3 = scanner.nextDouble();
+                                                                        if( 0 < side_3){
+                                                                            while (true){
+                                                                                System.out.print("Enter the value of side_4: ");
+                                                                                try {
+                                                                                    double side_4 = scanner.nextDouble();
+                                                                                    if(0 < side_4){
+
+                                                                                        Trapezoid trapezoid = new Trapezoid(parallelSide_1,parallelSide_2,side_3,side_4);
+
+                                                                                        double perimeterOfTrapezoid = trapezoid.perimeter();
+                                                                                        String name = trapezoid.toString();
+                                                                                        System.out.println("Perimeter of "+ name + " is "+ perimeterOfTrapezoid +"\n");
+                                                                                        break;
+                                                                                    }
+                                                                                    else
+                                                                                        System.out.println("Enter Correct Input");
+                                                                                }
+                                                                                catch (InputMismatchException e){
+                                                                                    System.out.println("Enter Correct Input");
+                                                                                    scanner.nextLine();
+                                                                                }
+
+                                                                            }
+                                                                            break;
+                                                                        }
+                                                                        else
+                                                                            System.out.println("Enter Correct Input");
+
+                                                                    }
+                                                                    catch (InputMismatchException e){
+                                                                        System.out.println("Enter Correct Input");
+                                                                        scanner.nextLine();
+                                                                    }
+
+                                                                }
+                                                                break;
+
+                                                            }
+                                                            else
+                                                                System.out.println("Enter Correct Input");
+
+                                                        }
+                                                        catch (InputMismatchException e){
+                                                            System.out.println("Enter Correct Input");
+                                                            scanner.nextLine();
+                                                        }
+
+
+                                                    }
+                                                    break;
+
+                                                }
+                                                else
+                                                    System.out.println("Enter Correct Input");
+
+                                            }
+                                            catch (InputMismatchException e){
+                                                System.out.println("Enter Correct Input");
+                                                scanner.nextLine();
+                                            }
+
+
+                                        }
+
+                                        //-------------------------------------
+                                    } else
+                                        break;
+
+                                    //----------
+                                }
+                                else{
+                                    System.out.println("Enter Correct Number");
+
+                                }
+                            }
+                            catch (InputMismatchException e){
+                                System.out.println("Enter Correct Input");
+                                scanner.nextLine();
+                            }
+                        }
+                        break;
+
+                    case 7:
+                        System.out.println("Exit");
+                        System.exit(0);
+
+                        //------------
+
                 }
             }
 
