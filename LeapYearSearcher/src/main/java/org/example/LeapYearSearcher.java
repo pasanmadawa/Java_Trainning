@@ -18,11 +18,13 @@ public class LeapYearSearcher {
                 try {
                     int leapYear = scanner.nextInt();
 
-                    if(leapYear % 4 == 0){
+                    if(leapYear % 4 == 0 && leapYear > 0){
                         System.out.println(leapYear + " is a leap year.\n");
                         break;
-                    }
-                    else{
+                    } else if (leapYear <0) {
+                        System.out.println("Enter Correct Input");
+
+                    } else{
                         System.out.println(leapYear + " is not a leap year.\n");
                         break;
                     }
