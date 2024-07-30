@@ -23,6 +23,7 @@ public class Main {
 
                 System.out.print("Enter the shape no: ");
 
+
                 int shapeNo = 0;
                 try {
                     shapeNo = scanner.nextInt();

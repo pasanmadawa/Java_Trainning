@@ -8,45 +8,74 @@ public class LeapYearSearcher {
     public void getTheNumber(){
 
         boolean search = true;
-        while (search){
+        do{
             System.out.println("---------Leap Year Searcher---------\n");
+            System.out.println("Enter no 1 for get the Leap Year Calculator");
+            System.out.println("Enter no 2 for exit\n");
 
-            while (true){
-                Scanner scanner = new Scanner(System.in);
-                System.out.print("Enter the year: ");
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter the number: ");
 
-                try {
-                    int leapYear = scanner.nextInt();
+            int inputNumber = 0;
 
-                    if(leapYear % 4 == 0 && leapYear > 0){
-                        if(leapYear % 100 == 0){
-                            if(leapYear % 400 == 0){
-                                System.out.println(leapYear + " is a leap year.\n");
-                                break;
-                            }
-                            else
-                                System.out.println(leapYear + " is not a leap year.\n");
-                            break;
-                        }
-                        else
-                            System.out.println(leapYear + " is not a leap year.\n");
-                        break;
-                    } else if (leapYear < 0) {
-                        System.out.println("Enter Correct Input");
-
-                    } else{
-                        System.out.println(leapYear + " is not a leap year.\n");
-                        break;
-                    }
-
-
+            try{
+                inputNumber = scanner.nextInt();
+                if(inputNumber <= 0 || 2 < inputNumber){
+                    System.out.println("Enter the correct number");
+                    continue;
                 }
-                catch (InputMismatchException e) {
-                    System.out.println("Enter the correct Input");
 
+            }
+            catch (InputMismatchException e){
+                System.out.println("Enter correct input\n");
+                scanner.nextLine();
+            }
+            {
+                switch (inputNumber){
+
+                    case 1:
+                        System.out.print("Enter the year: ");
+                        int inputYear = 0;
+                        try{
+                            inputYear = scanner.nextInt();
+//                            if(inputYear % 4 == 0 && inputYear > 0){
+//                                System.out.println("leap year");
+//                                continue;
+//                            } else if (inputYear < 0) {
+//                                System.out.println("Enter correct input");
+//
+//                            }
+//                            else{
+//                                System.out.println("Not a leap year.");
+//                                continue;
+//                            }
+
+                            LeapYearLogic leapYearLogic = new LeapYearLogic();
+                            if(leapYearLogic.isLeapYear(inputYear)){
+                                System.out.println("leap year");
+                                continue;
+                            }
+                            else{
+                                System.out.println("not a leap year");
+                                continue;
+                            }
+
+                        }
+                        catch (InputMismatchException e){
+                            System.out.println("Enter the correct Input");
+                            scanner.nextLine();
+                            continue;
+                        }
+
+
+                    case 2:
+                        search = false;
+                        break;
                 }
             }
+            break;
 
         }
+        while (search);
     }
 }
