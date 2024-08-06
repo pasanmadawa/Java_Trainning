@@ -57,13 +57,7 @@ public class Main {
                                     System.out.println("Perimeter of Square" + " is " + perimeterOfSquare);
                                     System.out.println("Area of Square" + " is " + areaOfSquare + "\n");
 
-                                    for(int i = 0; i < squareHeight; i++){
-                                        for(int j = 0; j < squareHeight; j++){
-                                            System.out.print("*" + "  ");
-                                        }
-                                        System.out.println();
-                                    }
-                                    System.out.println();
+                                    square.draw();
 
                                     break;
                                 }
@@ -98,13 +92,7 @@ public class Main {
                                                System.out.println("Perimeter of Square" + " is " + perimeterOfRectangle);
                                                System.out.println("Area of Square" + " is " + areaOfRectangle + "\n");
 
-                                               for(int i = 0; i < squareHeight; i++){
-                                                   for(int j = 0; j < squareWidth; j++){
-                                                       System.out.print("*" + " ");
-                                                   }
-                                                   System.out.println();
-                                               }
-                                               System.out.println();
+                                               rectangle.draw();
 
                                                break;
                                            }

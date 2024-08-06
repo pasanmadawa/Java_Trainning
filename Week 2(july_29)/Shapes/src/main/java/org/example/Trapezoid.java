@@ -73,6 +73,11 @@ public class Trapezoid implements Shape {
         return getParallelSide_1() + getParallelSide_2() + getSide_3() + getSide_4();
     }
 
+    @Override
+    public void draw() {
+
+    }
+
     public String toString(){
         return getClass().getSimpleName();
     }

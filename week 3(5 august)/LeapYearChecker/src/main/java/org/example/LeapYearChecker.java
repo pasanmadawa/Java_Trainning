@@ -3,13 +3,13 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class LeapYearSearcher {
+public class LeapYearChecker {
 
-    public void getTheNumber(){
+    public void leapYearChecker(){
 
         boolean search = true;
         do{
-            System.out.println("---------Leap Year Searcher---------\n");
+            System.out.println("\n---------Leap Year Searcher---------\n");
             System.out.println("Enter no 1 for get the Leap Year Calculator");
             System.out.println("Enter no 2 for exit\n");
 
@@ -21,7 +21,7 @@ public class LeapYearSearcher {
             try{
                 inputNumber = scanner.nextInt();
                 if(inputNumber <= 0 || 2 < inputNumber){
-                    System.out.println("Enter the correct number");
+                    System.out.println("Enter the correct Input");
                     continue;
                 }
 
@@ -29,6 +29,7 @@ public class LeapYearSearcher {
             catch (InputMismatchException e){
                 System.out.println("Enter correct input\n");
                 scanner.nextLine();
+                continue;
             }
             {
                 switch (inputNumber){
@@ -38,17 +39,6 @@ public class LeapYearSearcher {
                         int inputYear = 0;
                         try{
                             inputYear = scanner.nextInt();
-//                            if(inputYear % 4 == 0 && inputYear > 0){
-//                                System.out.println("leap year");
-//                                continue;
-//                            } else if (inputYear < 0) {
-//                                System.out.println("Enter correct input");
-//
-//                            }
-//                            else{
-//                                System.out.println("Not a leap year.");
-//                                continue;
-//                            }
 
                             LeapYearLogic leapYearLogic = new LeapYearLogic();
                             if(leapYearLogic.isLeapYear(inputYear)){

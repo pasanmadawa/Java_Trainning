@@ -51,6 +51,11 @@ public class Rhombus implements Shape{
         return getSide() * 4;
     }
 
+    @Override
+    public void draw() {
+
+    }
+
     public String toString(){
         return getClass().getSimpleName();
     }

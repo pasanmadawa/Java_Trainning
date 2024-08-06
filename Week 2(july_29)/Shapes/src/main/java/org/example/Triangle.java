@@ -62,6 +62,11 @@ public class Triangle implements Shape {
     }
 
     @Override
+    public void draw() {
+
+    }
+
+    @Override
     public String toString(){
         return getClass().getSimpleName();
     }

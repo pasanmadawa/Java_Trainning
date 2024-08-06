@@ -1,5 +1,4 @@
 package org.example;
-import java.lang.Math.*;
 
 public class Circle implements Shape {
 
@@ -26,6 +25,11 @@ public class Circle implements Shape {
     @Override
     public double perimeter() {
         return 2 * Math.PI * getRadius();
+    }
+
+    @Override
+    public void draw() {
+
     }
 
     @Override

@@ -32,6 +32,17 @@ public class Quadrilateral implements Shape{
     }
 
     @Override
+    public void draw() {
+        for(int i = 0; i < getWidth(); i++){
+            for(int j = 0; j < getHeight(); j++){
+                System.out.print("*" + "  ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    @Override
     public double area(){
         return getHeight() * getWidth();
     }
