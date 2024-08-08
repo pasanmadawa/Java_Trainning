@@ -27,24 +27,28 @@ public class Main {
                                 System.out.print("Enter the length of array: ");
                                 try {
                                     int length = scanner.nextInt();
-                                    char[] array = new char[length];
+                                    int[] array = new int[length];
 
 
                                     try{
                                         System.out.println("Enter the value: ");
                                         for(int i = 0; i < length; i++){
-                                            array[i] = scanner.next().charAt(0);
+                                            array[i] = scanner.nextInt();
                                         }
 
-                                        for(char printArray : array){
+                                        System.out.print("Array: ");
+
+                                        for(int printArray : array){
                                             System.out.print(printArray + " ");
                                         }
                                         System.out.println();
-                                        MergeSort mergeSort = new MergeSort();
-                                        mergeSort.sort(array,0, array.length - 1 );
+                                        MergeSort obj = new MergeSort();
+                                        int[] sortedArray =  obj.mergeSort(array);
 
-                                        for(char sortArray : array){
-                                            System.out.print(sortArray + " ");
+                                        System.out.print("Sorted array: ");
+
+                                        for(int array1 : sortedArray){
+                                            System.out.print(array1 + " ");
                                         }
 
                                         System.out.println();
@@ -73,7 +77,7 @@ public class Main {
                 }
             }
             catch (InputMismatchException e){
-                System.out.println("Enter correct input");
+                System.out.println("Enter correct input\n");
             }
         }
     }
