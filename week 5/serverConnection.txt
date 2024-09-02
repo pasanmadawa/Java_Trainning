@@ -1,0 +1,57 @@
+{
+student: "",
+grade:""
+}
+
+1. POST /student
+{
+"name": "Sama",
+"grade" : 5
+}
+
+Response: 200
+{
+"id":"asds-adsf-asdfadf-adfdd",
+"name": "Sama",
+"grade" : 5
+}
+
+2. PUT /student/asds-adsf-asdfadf-adfdd"
+{
+"name": "Sama Fernando",
+"grade" : 5
+}
+
+Response: 200
+{
+"id":"asds-adsf-asdfadf-adfdd",
+"name": "Sama Fernando",
+"grade" : 5
+}
+
+3. GET /student/asds-adsf-asdfadf-adfdd
+{
+"id":"asds-adsf-asdfadf-adfdd",
+"name": "Sama Fernando",
+"grade" : 5
+}
+
+4. DELETE {
+"id":"asds-adsf-asdfadf-adfdd",
+"name": "Sama Fernando",
+"grade" : 5
+}
+Response: 204
+no body content
+
+Use MySQL as a database
+
+GET /student/list
+[
+{
+"id":"asds-adsf-asdfadf-adfdd",
+"name": "Sama Fernando",
+"grade" : 5
+}
+]
+

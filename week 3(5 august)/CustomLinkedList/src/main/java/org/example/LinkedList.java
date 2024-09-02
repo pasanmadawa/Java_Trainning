@@ -1,12 +1,12 @@
 package org.example;
 
-public class CustomizedLinkedList {
+public class LinkedList {
 
     private Node head;
     private Node tail;
     private int size;
 
-    public CustomizedLinkedList(){
+    public LinkedList(){
 
         this.size = 0;
     }
@@ -129,7 +129,7 @@ public class CustomizedLinkedList {
 
         }
 
-        return 0;
+        return -1;
     }
     public int search(int value){
         Node search = head;
@@ -145,7 +145,7 @@ public class CustomizedLinkedList {
 
         }
 
-        return 0;
+        return -1;
     }
 
 

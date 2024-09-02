@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    CustomizedLinkedList list = new CustomizedLinkedList();
+    LinkedList list = new LinkedList();
     Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Main {
             System.out.println("       CustomLinked List     ");
             System.out.println("==============================");
             System.out.println("1 - Insert number at the beginning");
-            System.out.println("2 - Insert number at end");
+            System.out.println("2 - Insert number at the end");
             System.out.println("3 - Delete the given index number");
             System.out.println("4 - Delete the given value");
             System.out.println("5 - Search the given index number");
@@ -29,7 +29,7 @@ public class Main {
             System.out.println("8 - Exit");
             Scanner scanner = new Scanner(System.in);
 
-            System.out.print("Enter the number: ");
+            System.out.print("Your Choice: ");
             try{
                 int input = scanner.nextInt();
                 if(input > 0 && input < 9){
@@ -83,52 +83,52 @@ public class Main {
 
     public void insertFirstValue(){
 
-        int input;
+        String input;
         boolean search   = false;
 
         while(!search){
 
-            System.out.println("Enter '0' for stop");
+            System.out.println("Enter 's' for stop");
             System.out.print("Enter the number: ");
 
-            try {
-                input = scanner.nextInt();
-                if(input == 0){
-                    break;
-                }
-                else{
+            input = scanner.next();
 
-                    list.firstInsert(input);
-                }
+            if(input.equalsIgnoreCase("s")){
+                break;
             }
-            catch (InputMismatchException e){
-                System.out.println("Enter correct Input");
+
+            try {
+                int number = Integer.parseInt(input);
+                list.firstInsert(number);
+            }
+            catch (NumberFormatException e){
+                System.out.println("Enter correct Integer Input");
                 scanner.nextLine();
             }
         }
     }
 
     public void insertLastValue(){
-        int input;
+        String input;
         boolean search   = false;
 
         while(!search){
 
-            System.out.println("Enter '0' for stop");
+            System.out.println("Enter 's' for stop");
             System.out.print("Enter the number: ");
 
-            try {
-                input = scanner.nextInt();
-                if(input == 0){
-                    break;
-                }
-                else{
+            input = scanner.next();
 
-                    list.lastInsert(input);
-                }
+            if(input.equalsIgnoreCase("s")){
+                break;
             }
-            catch (InputMismatchException e){
-                System.out.println("Enter correct Input");
+
+            try {
+                int number = Integer.parseInt(input);
+                list.lastInsert(number);
+            }
+            catch (NumberFormatException e){
+                System.out.println("Enter correct Integer Input");
                 scanner.nextLine();
             }
         }
@@ -221,8 +221,9 @@ public class Main {
 
             try {
                 input = scanner.nextInt();
+                int validIndex = list.search(input);
 
-                if( input != list.searchValue(0)){
+                if( validIndex >= 0){
                     int index = list.search(input);
                     System.out.println("The " + input + " at index " + index );
 

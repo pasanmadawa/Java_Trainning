@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="myls:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/myls_jar</output-path>
+    <root id="archive" name="myls.jar">
+      <element id="module-output" name="myls" />
+    </root>
+  </artifact>
+</component>

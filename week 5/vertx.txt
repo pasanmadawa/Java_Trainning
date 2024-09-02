@@ -1,0 +1,10 @@
+vertx
+write a rest api using vertx package
+
+When call
+http://localhost:8080/hello
+this should return 
+{
+"message" : "Hello world"
+}
+in json format
