@@ -123,20 +123,20 @@ public class StudentDetails {
 
         String student_id = context.pathParam("id");
         System.out.println(student_id);
-        System.out.println("Hi");
+
         String query = "SELECT student_id, student_name, student_grade FROM student_details WHERE student_id = ?";
-        System.out.println("hi1");
+
         client.getConnection(ar -> {
             if (ar.succeeded()) {
-                System.out.println("hi2");
+
                 SqlConnection connection = ar.result();
 
                 connection.preparedQuery(query).execute(Tuple.of(student_id), res -> {
-                    System.out.println("hi3");
+
                     if (res.succeeded()) {
-                        System.out.println("hi4");
+
                         if (res.result().size() > 0) {
-                            System.out.println("hi5");
+
                             Row row = res.result().iterator().next();
                             String student_name = row.getString("student_name");
                             Integer student_grade = row.getInteger("student_grade");
